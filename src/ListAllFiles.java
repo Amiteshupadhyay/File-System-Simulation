@@ -3,7 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class ListFile {
+public class ListAllFiles {
     public ArrayList<CustFile> listFile(String args)throws IOException {
         ArrayList<CustFile> result = new ArrayList<>();
         Files.list(Paths.get(args))

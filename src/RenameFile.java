@@ -5,15 +5,13 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 public class RenameFile {
-    RenameFile(String[] args) {
-        Path sourcePath = Paths.get("./"+args[0]);
-        Path destinationPath = Paths.get("./"+args[1]);
+    public void renameFile(String directory,String oldName,String newName) {
+        Path sourcePath = Paths.get(directory+"\\"+oldName);
+        Path destinationPath = Paths.get(directory+"\\"+newName);
         try {
             Files.move(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
-            System.out.println("File was successfully renamed");
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Error: Unable to rename file");
         }
     }
 }

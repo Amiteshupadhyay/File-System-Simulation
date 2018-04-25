@@ -1,6 +1,6 @@
 import java.nio.file.Paths;
 
-public class GetPath {
+public class GetCurrentPath {
     String getPath() {
         try {
             return Paths.get("").toAbsolutePath().toString();

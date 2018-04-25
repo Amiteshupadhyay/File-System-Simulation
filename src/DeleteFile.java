@@ -2,16 +2,13 @@ import java.io.IOException;
 import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.nio.file.FileSystems;
 
 public class DeleteFile {
-    DeleteFile(String[] args) {
+    public void deleteFile(String args) {
 
-        String x=Paths.get("").toAbsolutePath()+"\\"+args[0];
-
-        Path path = FileSystems.getDefault().getPath(x);
+        Path path = FileSystems.getDefault().getPath(args);
 
         try {
             Files.delete(path);
@@ -24,7 +21,5 @@ public class DeleteFile {
         catch (IOException e){
             System.err.println("Fatal error");
         }
-
-
     }
 }

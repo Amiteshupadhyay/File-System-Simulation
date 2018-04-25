@@ -4,15 +4,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class CopyFile {
-    public static String copyFile(String[] args) {
-        Path sourcePath = Paths.get("./"+args[0]);
-        Path destinationPath = Paths.get("./"+args[1]);
+    public static void copyFile(String source,String destination) {
+        Path sourcePath = Paths.get(source);
+        Path destinationPath = Paths.get(destination);
         try {
             Files.copy(sourcePath, destinationPath);
-            return "File was successfully copied";
         } catch (IOException e) {
             e.printStackTrace();
-            return "Error: Unable to copy file";
         }
     }
 }
